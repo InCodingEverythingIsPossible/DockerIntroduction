@@ -1,8 +1,8 @@
-# Airflow Introduction
+# Docker Introduction
 
 
 ## Docker setup
-## ------------------------------------------
+## -------------------------------------------------
 1. Enable virtualization on processor in bios
 2. Enable Windows system features
    - Virtual Machine Platform
@@ -20,6 +20,16 @@
    - Change assigned resources in C:\Users\{Your_account}\.wslconfig
    - Microsoft tutorial [wsl_config_tutorial](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configure-global-options-with-wslconfig)
 
+
+## Useful links
+## -------------------------------------------------
+
+### Docker base images
+Base images to use inside DockerFile -> [hub_docker](https://hub.docker.com/)  
+For example Node version 23 alpine  
+Code: `FROM node:23-alpine`
+
+<br>
 
 ## Basic commands
 ## -------------------------------------------------
@@ -114,7 +124,7 @@ Command: `docker run {container_id`
 ### Tagging image with your own name
 **!!! Naming convention below**  
 Sample: `docker build -t incodingeverythingispossible/redis:latest .`  
-Command: `docker build -t {your_docker_id}/{repo_name}:{version}{source_directory_of_files_to_build_image}`
+Command: `docker build -t {your_docker_id}/{repo_name}:{version} {source_directory_of_files_to_build_image}`
 
 ### Running image with your tag name
 Sample: `docker run incodingeverythingispossible/redis`  
@@ -123,3 +133,7 @@ Command: `docker run {your_docker_id}/{repo_name}`
 ### Tag built image with your own name
 Sample: `docker tag 9dsajk app1`  
 Command: `docker tag {container_id} {your_image_name}`
+
+### Docker run with Port Mapping
+Sample: `docker run -p 8080:8080 sdha821`  
+Command: `docker run -p {route_incoming_request}:{to_port_on_container} {image_id}`
