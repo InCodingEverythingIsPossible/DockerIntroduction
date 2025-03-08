@@ -130,6 +130,10 @@ Command: `docker build -t {your_docker_id}/{repo_name}:{version} {source_directo
 Sample: `docker run incodingeverythingispossible/redis`  
 Command: `docker run {your_docker_id}/{repo_name}`
 
+### Running image in the background
+Sample: `docker run -d incodingeverythingispossible/redis`  
+Command: `docker run -d {your_docker_id}/{repo_name}`
+
 ### Tag built image with your own name
 Sample: `docker tag 9dsajk app1`  
 Command: `docker tag {container_id} {your_image_name}`
@@ -137,3 +141,21 @@ Command: `docker tag {container_id} {your_image_name}`
 ### Docker run with Port Mapping
 Sample: `docker run -p 8080:8080 sdha821`  
 Command: `docker run -p {route_incoming_request}:{to_port_on_container} {image_id}`
+
+### Run containers
+It runs docker yaml file in current directory  
+Command: `docker-compose up`
+
+### Rebuild and run containers
+It rebuilds and run docker yaml file in current directory  
+Command: `docker-compose up --build`
+
+### Launch containers in background
+Command: `docker-compose up -d`
+
+### Stop containers
+Command: `docker-compose down`
+
+### Check status of containers
+Look for all containers which are defined in docker-compose.yml  
+Command `docker-compose ps`
